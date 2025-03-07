@@ -1,3 +1,19 @@
+<<<<<<< HEAD
 # Ignore virtual environment
 venv/
 .venv/
+=======
+# Ignore virtual environments
+venv/
+.venv/
+
+# Ignore compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore environment configuration files
+.env
+
+>>>>>>> backup-commits
