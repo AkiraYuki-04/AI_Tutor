@@ -1,6 +1,12 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 from routes.chat import ai_chat
 from routes.history import fetch_history
+
+
+app = Flask(__name__)
+CORS(app)  # Allow all origins
+
 
 app = Flask(__name__)
 

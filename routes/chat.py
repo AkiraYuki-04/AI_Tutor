@@ -2,6 +2,7 @@ from flask import Blueprint, request, jsonify
 import google.generativeai as genai # Google Gemini AI SDK
 import wikipediaapi
 from config import GOOGLE_AI_API_KEY  # Store your Gemini API key in config.py
+from flask_cors import CORS
 
 # ✅ Configure Google Gemini API
 genai.configure(api_key=GOOGLE_AI_API_KEY)
@@ -9,6 +10,7 @@ model = genai.GenerativeModel("gemini-1.5-flash")  # Use a faster Gemini model
 
 # Create Blueprint for chat routes
 ai_chat = Blueprint("ai_chat", __name__)
+CORS(ai_chat) 
 
 # Wikipedia setup
 wiki = wikipediaapi.Wikipedia(
